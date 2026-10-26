@@ -438,7 +438,7 @@
         background: #eef2ff;
         color: #3730a3;
       }
-      .txn-items tbody th {
+      .txn-items .txn-item-in {
         font-weight: 600;
       }
       .txn-totals-title {
@@ -963,27 +963,28 @@ Select a radio: #dynamicRadioDetails is created</pre>
               <th scope="col">Category</th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
-              <th scope="row">QA Wireless Keyboard</th>
-              <td>1200.00</td>
-              <td>1</td>
-              <td>QA-KBD-003</td>
-              <td>Accessories</td>
+          <!-- These item selectors are intentionally stable for AB Tasty Selector Mode item QA. -->
+          <tbody id="txn-items">
+            <tr class="txn-item">
+              <th scope="row" class="txn-item-in">QA Wireless Keyboard</th>
+              <td class="txn-item-ip">1200.00</td>
+              <td class="txn-item-iq">1</td>
+              <td class="txn-item-ic">QA-KBD-003</td>
+              <td class="txn-item-iv">Accessories</td>
             </tr>
-            <tr>
-              <th scope="row">QA USB-C Hub</th>
-              <td>600.00</td>
-              <td>2</td>
-              <td>QA-HUB-003</td>
-              <td>Accessories</td>
+            <tr class="txn-item">
+              <th scope="row" class="txn-item-in">QA USB-C Hub</th>
+              <td class="txn-item-ip">600.00</td>
+              <td class="txn-item-iq">2</td>
+              <td class="txn-item-ic">QA-HUB-003</td>
+              <td class="txn-item-iv">Accessories</td>
             </tr>
-            <tr>
-              <th scope="row">QA Mouse Pad</th>
-              <td>300.00</td>
-              <td>1</td>
-              <td>QA-PAD-003</td>
-              <td>Accessories</td>
+            <tr class="txn-item">
+              <th scope="row" class="txn-item-in">QA Mouse Pad</th>
+              <td class="txn-item-ip">300.00</td>
+              <td class="txn-item-iq">1</td>
+              <td class="txn-item-ic">QA-PAD-003</td>
+              <td class="txn-item-iv">Accessories</td>
             </tr>
           </tbody>
         </table>

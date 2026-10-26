@@ -375,6 +375,84 @@
         border-radius: 6px;
         background: #fff;
       }
+      .txn-receipt {
+        margin: 40px auto;
+      }
+      .txn-receipt-note {
+        text-align: center;
+        margin: 0 0 18px;
+        color: #444;
+        line-height: 1.5;
+      }
+      .txn-fields {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 12px;
+        margin: 0 0 28px;
+      }
+      .txn-field {
+        margin: 0;
+        padding: 12px;
+        border: 1px solid #cbd5e1;
+        border-radius: 8px;
+        background: #f8fafc;
+      }
+      .txn-field dt {
+        margin: 0 0 6px;
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+        color: #475569;
+      }
+      .txn-field dd {
+        margin: 0;
+      }
+      .txn-field dd div {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        font-size: 1.05rem;
+        font-weight: 700;
+        color: #0f172a;
+      }
+      .txn-items-wrap {
+        overflow-x: auto;
+        margin-bottom: 24px;
+      }
+      .txn-items {
+        width: 100%;
+        border-collapse: collapse;
+        text-align: left;
+      }
+      .txn-items caption {
+        margin-bottom: 10px;
+        font-size: 1.15rem;
+        font-weight: 700;
+        text-align: left;
+        color: #0f172a;
+      }
+      .txn-items th,
+      .txn-items td {
+        padding: 10px 12px;
+        border: 1px solid #cbd5e1;
+      }
+      .txn-items thead th {
+        background: #eef2ff;
+        color: #3730a3;
+      }
+      .txn-items tbody th {
+        font-weight: 600;
+      }
+      .txn-totals-title {
+        margin: 0 0 10px;
+        font-size: 1.15rem;
+      }
+      .txn-totals {
+        margin: 0;
+        padding: 14px 18px 14px 36px;
+        border: 1px solid #bbf7d0;
+        border-radius: 8px;
+        background: #f0fdf4;
+        line-height: 1.7;
+      }
     </style>
 	  <script id="cookieScript" class="inline-script">
   const expires = new Date();
@@ -827,6 +905,97 @@ Select a radio: #dynamicRadioDetails is created</pre>
       </div>
 
       <div id="dynamicOverlayHost"></div>
+    </section>
+
+    <!-- These element IDs are intentionally stable for AB Tasty Selector Mode QA. Each value is static visible text and is not supplied by a data layer. -->
+    <section id="abTastySelectorTransaction" class="txn-receipt embedded-feature-section" aria-labelledby="abTastySelectorTransactionTitle">
+      <h2 id="abTastySelectorTransactionTitle" class="embedded-feature-title">AB Tasty Selector Mode Transaction</h2>
+      <p id="abTastySelectorTransactionDesc" class="txn-receipt-note">
+        Static receipt for selector checks. Each transaction value is the only text inside its element.
+      </p>
+      <dl class="txn-fields">
+        <div class="txn-field">
+          <dt id="txn-tid-label">Transaction ID</dt>
+          <dd><div id="txn-tid" aria-labelledby="txn-tid-label">QA-20261026-0003</div></dd>
+        </div>
+        <div class="txn-field">
+          <dt id="txn-tr-label">Transaction revenue</dt>
+          <dd><div id="txn-tr" aria-labelledby="txn-tr-label">3286.00</div></dd>
+        </div>
+        <div class="txn-field">
+          <dt id="txn-icn-label">Total item quantity</dt>
+          <dd><div id="txn-icn" aria-labelledby="txn-icn-label">4</div></dd>
+        </div>
+        <div class="txn-field">
+          <dt id="txn-ts-label">Shipping</dt>
+          <dd><div id="txn-ts" aria-labelledby="txn-ts-label">100.00</div></dd>
+        </div>
+        <div class="txn-field">
+          <dt id="txn-tt-label">Tax</dt>
+          <dd><div id="txn-tt" aria-labelledby="txn-tt-label">486.00</div></dd>
+        </div>
+        <div class="txn-field">
+          <dt id="txn-tc-label">Currency</dt>
+          <dd><div id="txn-tc" aria-labelledby="txn-tc-label">INR</div></dd>
+        </div>
+        <div class="txn-field">
+          <dt id="txn-tcc-label">Coupon code</dt>
+          <dd><div id="txn-tcc" aria-labelledby="txn-tcc-label">QA20</div></dd>
+        </div>
+        <div class="txn-field">
+          <dt id="txn-pm-label">Payment method</dt>
+          <dd><div id="txn-pm" aria-labelledby="txn-pm-label">Card</div></dd>
+        </div>
+        <div class="txn-field">
+          <dt id="txn-sm-label">Shipping method</dt>
+          <dd><div id="txn-sm" aria-labelledby="txn-sm-label">Express</div></dd>
+        </div>
+      </dl>
+      <div class="txn-items-wrap">
+        <table class="txn-items">
+          <caption>Order items</caption>
+          <thead>
+            <tr>
+              <th scope="col">Product</th>
+              <th scope="col">Unit price</th>
+              <th scope="col">Quantity</th>
+              <th scope="col">SKU</th>
+              <th scope="col">Category</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">QA Wireless Keyboard</th>
+              <td>1200.00</td>
+              <td>1</td>
+              <td>QA-KBD-003</td>
+              <td>Accessories</td>
+            </tr>
+            <tr>
+              <th scope="row">QA USB-C Hub</th>
+              <td>600.00</td>
+              <td>2</td>
+              <td>QA-HUB-003</td>
+              <td>Accessories</td>
+            </tr>
+            <tr>
+              <th scope="row">QA Mouse Pad</th>
+              <td>300.00</td>
+              <td>1</td>
+              <td>QA-PAD-003</td>
+              <td>Accessories</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <h3 id="abTastySelectorTransactionTotalsTitle" class="txn-totals-title">Totals</h3>
+      <ul class="txn-totals">
+        <li>Product total: 2700.00</li>
+        <li>Shipping: 100.00</li>
+        <li>Tax: 486.00</li>
+        <li>Transaction revenue: 3286.00</li>
+        <li>Total item quantity: 4</li>
+      </ul>
     </section>
   </main>
 
